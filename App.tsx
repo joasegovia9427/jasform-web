@@ -1,11 +1,9 @@
-
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import Pricing from './components/Pricing';
 import Footer from './components/Footer';
-import AISupportWidget from './components/AISupportWidget';
 
 const App: React.FC = () => {
   return (
@@ -17,7 +15,6 @@ const App: React.FC = () => {
         <Pricing />
       </main>
       <Footer />
-      <AISupportWidget />
     </div>
   );
 };

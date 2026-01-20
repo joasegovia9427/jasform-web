@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { GoogleGenAI } from "@google/genai";
 
@@ -26,8 +25,12 @@ const AISupportWidget: React.FC = () => {
     setIsTyping(true);
 
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+      // Fix: Create new GoogleGenAI instance right before making an API call
+      // Fix: Ensure apiKey is passed correctly from process.env.API_KEY
+      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY as string });
+      
       const response = await ai.models.generateContent({
+        // Fix: Use 'gemini-3-flash-preview' as per guidelines for basic tasks
         model: 'gemini-3-flash-preview',
         contents: userMessage,
         config: {
@@ -35,8 +38,10 @@ const AISupportWidget: React.FC = () => {
         }
       });
 
+      // Fix: Use response.text property directly (not a method)
       setMessages(prev => [...prev, { role: 'ai', text: response.text || "Sorry, I couldn't process that request." }]);
     } catch (error) {
+      console.error(error);
       setMessages(prev => [...prev, { role: 'ai', text: "I'm having trouble connecting right now. Please try again later!" }]);
     } finally {
       setIsTyping(false);
