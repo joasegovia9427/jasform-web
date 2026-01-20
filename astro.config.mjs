@@ -1,17 +1,15 @@
-
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  // The base URL for your GitHub Pages site
   site: 'https://joasegovia9427.github.io',
-  // The repository name path
   base: '/jasform-web',
   integrations: [react(), tailwind()],
   build: {
-    // This ensures assets are referenced relatively or with the correct base
-    assets: 'assets'
+    assets: 'assets',
+    // Ensures that the generated HTML uses paths that work with the base config
+    format: 'file'
   }
 });
