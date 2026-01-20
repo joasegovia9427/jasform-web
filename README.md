@@ -1,6 +1,6 @@
 # JASForm SaaS Landing Page
 
-A modern SaaS landing page for JASForm featuring AI-powered form generation and support.
+A modern SaaS landing page for JASForm featuring HIPAA form generation.
 
 ## 🚀 Deployment
 
@@ -15,6 +15,4 @@ If you see an error in GitHub Actions stating "Get Pages site failed", follow th
 5. Re-run the failed workflow.
 
 ## Features
-- **AI Form Generator**: Generate full form structures from simple text prompts using Gemini.
-- **AI Support Widget**: Context-aware help for visitors.
 - **Responsive Design**: Built with React and Tailwind CSS.
