@@ -5,8 +5,9 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  // Replace with your actual GitHub Pages URL
-  // site: 'https://<your-username>.github.io',
-  // base: '/<your-repo-name>',
+  // The base URL for your GitHub Pages site
+  site: 'https://joasegovia9427.github.io',
+  // The repository name path
+  base: '/jasform-web',
   integrations: [react(), tailwind()],
 });
