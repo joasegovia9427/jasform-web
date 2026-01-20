@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
                 href="https://youtu.be/xPCi8Sn2ga0?si=y0dCL_y4lVwNpgHB&t=53" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto bg-white text-slate-700 border border-slate-200 px-10 py-4 rounded-full font-bold text-lg hover:bg-slate-50 transition active:scale-95 flex items-center justify-center gap-2"
+                className="w-full sm:w-auto bg-white text-slate-700 border border-slate-200 px-10 py-4 rounded-full font-bold text-lg hover:bg-slate-50 transition active:scale-95 flex items-center justify-center gap-2 animate-pulse"
               >
                 <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
