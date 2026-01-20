@@ -7,8 +7,5 @@ export default defineConfig({
   site: 'https://joasegovia9427.github.io',
   base: '/jasform-web',
   integrations: [react(), tailwind()],
-  output: 'static',
-  build: {
-    assets: 'assets'
-  }
+  output: 'static'
 });
