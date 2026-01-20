@@ -1,5 +1,9 @@
+
 {
   "name": "JASForm Landing Page",
-  "description": "A modern SaaS landing page for JASForm, a powerful form builder, featuring a clean aesthetic, responsive design, and integrated Gemini-powered support features.",
-  "requestFramePermissions": []
+  "description": "A high-conversion SaaS landing page for JASForm, featuring an AI-powered form generation engine and intelligent support assistant.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
 }
