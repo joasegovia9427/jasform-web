@@ -10,4 +10,8 @@ export default defineConfig({
   // The repository name path
   base: '/jasform-web',
   integrations: [react(), tailwind()],
+  build: {
+    // This ensures assets are referenced relatively or with the correct base
+    assets: 'assets'
+  }
 });

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,13 +13,12 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* Fix for potential blank screen during hydration */
         #root:empty {
             min-height: 100vh;
             background: #f8fafc;
         }
     </style>
-<script type="importmap">
+    <script type="importmap">
 {
   "imports": {
     "react": "https://esm.sh/react@19.0.0",
@@ -36,7 +36,6 @@
 </head>
 <body class="bg-slate-50 text-slate-900 antialiased">
     <div id="root"></div>
-    <!-- Use a relative path to ensure the module is found within the /jasform-web/ subpath -->
-    <script type="module" src="index.tsx"></script>
+    <script type="module" src="./index.tsx"></script>
 </body>
 </html>
