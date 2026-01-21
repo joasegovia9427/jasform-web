@@ -4,13 +4,13 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'How it works', href: '#how-it-works' },
-    { name: 'Features', href: '#features' },
-    { name: 'Blog', href: '#blog' },
-    { name: 'Team', href: '#team' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/jasform-web/' },
+    { name: 'How it works', href: '/jasform-web/#how-it-works' },
+    { name: 'Features', href: '/jasform-web/#features' },
+    { name: 'Blog', href: '#blog-archive' },
+    { name: 'Team', href: '/jasform-web/#team' },
+    { name: 'Pricing', href: '/jasform-web/#pricing' },
+    { name: 'Contact', href: '/jasform-web/#contact' },
     { name: 'Documentation', href: '#docs' },
   ];
 
@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex items-center">
-            <a href="/" className="flex items-center gap-3 group shrink-0">
+            <a href="/jasform-web/" className="flex items-center gap-3 group shrink-0">
               <img 
                 src="https://raw.githubusercontent.com/JASForm/branding/refs/heads/main/JASForm_Isologo_for_small.webp" 
                 alt="JASForm Logo" 
@@ -38,14 +38,14 @@ const Navbar: React.FC = () => {
               <a 
                 key={link.name} 
                 href={link.href} 
-                className="text-slate-600 hover:text-blue-600 transition font-medium text-sm xl:text-base"
+                className="text-slate-600 hover:text-blue-600 transition font-medium text-sm xl:text-base whitespace-nowrap"
               >
                 {link.name}
               </a>
             ))}
             <a 
               href={appUrl}
-              className="bg-blue-600 text-white min-w-[100px] px-6 py-2 rounded-full font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-500/20 active:scale-95 text-sm xl:text-base ml-2 inline-block text-center"
+              className="bg-blue-600 text-white min-w-[100px] px-6 py-2 rounded-full font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-500/20 active:scale-95 text-sm xl:text-base ml-2 inline-block text-center whitespace-nowrap"
             >
               Log in
             </a>

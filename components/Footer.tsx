@@ -23,15 +23,14 @@ const Footer: React.FC = () => {
   ];
 
   const appUrl = "https://joasegovia9427.github.io/jasform-app/";
-  const blogUrl = "https://joasegovia9427.github.io/jasform-web/blog/";
 
   return (
     <footer className="bg-[#0f4c81] text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {/* Left Column: Logo and Social Icons */}
           <div className="flex flex-col items-start">
-            <a href="/" className="inline-block group mb-6">
+            <a href="/jasform-web/" className="inline-block group mb-6">
               <img 
                 src="https://raw.githubusercontent.com/JASForm/branding/refs/heads/main/JASForm_Isologo_for_small_transp%202.png" 
                 alt="JASForm Logo" 
@@ -55,12 +54,26 @@ const Footer: React.FC = () => {
             </div>
           </div>
           
+          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-center gap-4 mb-8">
+              <a 
+                href="https://youtu.be/xPCi8Sn2ga0?si=y0dCL_y4lVwNpgHB&t=53" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto bg-white text-slate-700 border border-slate-200 px-10 py-4 rounded-full font-bold text-lg hover:bg-slate-50 transition active:scale-95 flex items-center justify-center gap-2 animate-pulse"
+              >
+                <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                </svg>
+                Watch Demo
+              </a>
+            </div>
+
           {/* Right Column: Pages Section */}
           <div className="flex flex-col items-start md:items-end text-left md:text-right">
             <h4 className="font-bold text-white mb-6 uppercase text-sm tracking-widest">Pages</h4>
             <ul className="space-y-4 text-white/70">
-              <li><a href="/" className="hover:text-white transition-colors text-lg">Home</a></li>
-              <li><a href={blogUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors text-lg">Blog</a></li>
+              <li><a href="/jasform-web/" className="hover:text-white transition-colors text-lg">Home</a></li>
+              <li><a href="#blog-archive" className="hover:text-white transition-colors text-lg">Blog</a></li>
               <li><a href={appUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors text-lg">App</a></li>
               <li><a href="#docs" className="hover:text-white transition-colors text-lg">Documentation</a></li>
             </ul>
