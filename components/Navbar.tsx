@@ -4,24 +4,45 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Home', href: '/jasform-web/' },
-    { name: 'How it works', href: '/jasform-web/#how-it-works' },
-    { name: 'Features', href: '/jasform-web/#features' },
-    { name: 'Blog', href: '#blog-archive' },
-    { name: 'Team', href: '/jasform-web/#team' },
-    { name: 'Pricing', href: '/jasform-web/#pricing' },
-    { name: 'Contact', href: '/jasform-web/#contact' },
-    { name: 'Documentation', href: '#docs' },
+    { name: 'Home', href: '#home', isExternal: false },
+    { name: 'How it works', href: '#how-it-works', isExternal: false },
+    { name: 'Features', href: '#features', isExternal: false },
+    { name: 'Blog', href: '#blog-archive', isExternal: true },
+    { name: 'Team', href: '#team', isExternal: false },
+    { name: 'Pricing', href: '#pricing', isExternal: false },
+    { name: 'Contact', href: '#contact', isExternal: false },
+    { name: 'Documentation', href: '#docs', isExternal: true },
   ];
 
   const appUrl = "https://joasegovia9427.github.io/jasform-app/";
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isExternal: boolean) => {
+    // Only intercept if it's an internal landing page section and we are on the home page
+    if (!isExternal && href.startsWith('#')) {
+      const targetId = href.replace('#', '');
+      const element = document.getElementById(targetId);
+      
+      if (element) {
+        e.preventDefault();
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+        setIsOpen(false);
+      }
+    }
+  };
 
   return (
     <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex items-center">
-            <a href="/jasform-web/" className="flex items-center gap-3 group shrink-0">
+            <a 
+              href="#home" 
+              onClick={(e) => handleNavClick(e, '#home', false)}
+              className="flex items-center gap-3 group shrink-0"
+            >
               <img 
                 src="https://raw.githubusercontent.com/JASForm/branding/refs/heads/main/JASForm_Isologo_for_small.webp" 
                 alt="JASForm Logo" 
@@ -38,6 +59,7 @@ const Navbar: React.FC = () => {
               <a 
                 key={link.name} 
                 href={link.href} 
+                onClick={(e) => handleNavClick(e, link.href, link.isExternal)}
                 className="text-slate-600 hover:text-blue-600 transition font-medium text-sm xl:text-base whitespace-nowrap"
               >
                 {link.name}
@@ -71,7 +93,7 @@ const Navbar: React.FC = () => {
             <a 
               key={link.name} 
               href={link.href} 
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => handleNavClick(e, link.href, link.isExternal)}
               className="block px-3 py-3 text-slate-600 font-medium hover:bg-slate-50 rounded-lg"
             >
               {link.name}
