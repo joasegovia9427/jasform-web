@@ -9,7 +9,7 @@ const steps = [
   {
     image: "https://raw.githubusercontent.com/JASForm/branding/refs/heads/main/Configure%20and%20share480w.webp",
     title: "Configure and share",
-    description: "Once you have created the form, you can configure integrations with other tools by using Frames or send the information to an specific endpoint. After configuring it, you'll receive a unique link that you can share with your intended audience."
+    description: "Once you have created the form, you can configure integrations with other tools by using Frames or send the information to a specific endpoint. After configuring it, you'll receive a unique link that you can share with your intended audience."
   },
   {
     image: "https://raw.githubusercontent.com/JASForm/branding/refs/heads/main/Users%20complete%20the%20form480w.webp",

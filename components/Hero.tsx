@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 text-center lg:text-left">
           <div className="lg:w-2/3">
             <h1 className="text-5xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight">
-              Create awesome form easily, <br />
+              Create awesome forms easily, <br />
               <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent italic">but HIPAA Compliant!&nbsp;</span>
             </h1>
             <p className="max-w-2xl mx-auto lg:mx-0 text-xl text-slate-600 mb-12">

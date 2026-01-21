@@ -201,7 +201,10 @@ const Documentation: React.FC = () => {
 
               <section>
                 <h3 className="text-2xl font-bold text-slate-800 mb-4">3. Managing an Existing Form</h3>
-                <p>Press the <strong>“>”</strong> button next to the form in your list to access management options:</p>
+                <p>
+                  In the form list, click the <strong>details icon ( <span className="inline-flex items-center justify-center w-5 h-5 bg-blue-100 text-blue-700 rounded-md font-bold text-xs mx-0.5 border border-blue-200">{">"}</span> )</strong> 
+                  located next to the form row in your list to access its management options:
+                </p>
                 <ul className="list-disc pl-6 space-y-3 text-slate-600 mt-4">
                   <li><strong>Edit Questions:</strong> Add, remove, or reorder form fields and logic.</li>
                   <li><strong>View form's instances:</strong> Access the database of completed submissions.</li>

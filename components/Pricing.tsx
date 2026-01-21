@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const Pricing: React.FC = () => {
@@ -29,7 +28,7 @@ const Pricing: React.FC = () => {
               </li>
               <li className="flex items-center text-slate-600">
                 <svg className="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                 HIPAA Complaiant by defualt
+                 HIPAA Compliant by default
               </li>
             </ul>
             <button className="w-full py-3 px-4 border border-slate-200 rounded-lg font-bold hover:bg-slate-50 transition">Get Started</button>
