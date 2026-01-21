@@ -11,9 +11,12 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import BlogArchive from './pages/BlogArchive';
 import Documentation from './pages/Documentation';
+import BlogPostSafety from './pages/BlogPostSafety';
+import BlogPostSecurity from './pages/BlogPostSecurity';
+import BlogPostImpact from './pages/BlogPostImpact';
 
 const App: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<'home' | 'blog' | 'docs'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'blog' | 'docs' | 'post-safety' | 'post-security' | 'post-impact'>('home');
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -23,6 +26,15 @@ const App: React.FC = () => {
         window.scrollTo(0, 0);
       } else if (hash === '#docs') {
         setCurrentPage('docs');
+        window.scrollTo(0, 0);
+      } else if (hash === '#blog/strengthening-patient-safety') {
+        setCurrentPage('post-safety');
+        window.scrollTo(0, 0);
+      } else if (hash === '#blog/cybersecurity-attacks-healthcare') {
+        setCurrentPage('post-security');
+        window.scrollTo(0, 0);
+      } else if (hash === '#blog/revolutionizing-healthcare-impact') {
+        setCurrentPage('post-impact');
         window.scrollTo(0, 0);
       } else {
         setCurrentPage('home');
@@ -41,6 +53,12 @@ const App: React.FC = () => {
         return <BlogArchive />;
       case 'docs':
         return <Documentation />;
+      case 'post-safety':
+        return <BlogPostSafety />;
+      case 'post-security':
+        return <BlogPostSecurity />;
+      case 'post-impact':
+        return <BlogPostImpact />;
       default:
         return (
           <>

@@ -7,7 +7,7 @@ const allBlogPosts = [
     author: "Agustin Pereira",
     date: "May 12, 2024",
     excerpt: "In the healthcare industry, where the stakes are often life and death, the reliability and safety of software systems are of paramount importance...",
-    url: "https://joasegovia9427.github.io/jasform-web/blog/strengthening-patient-safety"
+    url: "#blog/strengthening-patient-safety"
   },
   {
     image: "https://raw.githubusercontent.com/JASForm/branding/refs/heads/main/post2.webp",
@@ -15,7 +15,7 @@ const allBlogPosts = [
     author: "Joaquin Segovia",
     date: "April 28, 2024",
     excerpt: "In recent years, the healthcare industry has witnessed an alarming rise in cyber threats, making it a prime target for cybercriminals...",
-    url: "https://joasegovia9427.github.io/jasform-web/blog/cybersecurity-attacks-healthcare"
+    url: "#blog/cybersecurity-attacks-healthcare"
   },
   {
     image: "https://raw.githubusercontent.com/JASForm/branding/refs/heads/main/post3.webp",
@@ -23,7 +23,7 @@ const allBlogPosts = [
     author: "Sebastian Insausti",
     date: "March 15, 2024",
     excerpt: "In the ever-evolving landscape of healthcare, technology has emerged as a powerful force, revolutionizing the way medical services are delivered...",
-    url: "https://joasegovia9427.github.io/jasform-web/blog/revolutionizing-healthcare-impact"
+    url: "#blog/revolutionizing-healthcare-impact"
   }
 ];
 
