@@ -6,26 +6,26 @@ const blogPosts = [
     title: "Strengthening Patient Safety through Software Resilience",
     author: "Agustin Pereira",
     excerpt: "In the healthcare industry, where the stakes are often life and death, the reliability and safety of software systems are of paramount importance. Defensive programming is an essential approach that emphasizes building robust and resilient software to prevent failures, mitigate...",
-    url: "https://joasegovia9427.github.io/jasform-web/blog/strengthening-patient-safety"
+    url: "#blog/strengthening-patient-safety"
   },
   {
     image: "https://raw.githubusercontent.com/JASForm/branding/refs/heads/main/post2.webp",
     title: "Cybersecurity Attacks in Healthcare",
     author: "Joaquin Segovia",
     excerpt: "In recent years, the healthcare industry has witnessed an alarming rise in cyber threats, making it a prime target for cybercriminals seeking to exploit vulnerabilities and gain unauthorized access to sensitive patient data. The consequences of cybersecurity attacks in healthcare...",
-    url: "https://joasegovia9427.github.io/jasform-web/blog/cybersecurity-attacks-healthcare"
+    url: "#blog/cybersecurity-attacks-healthcare"
   },
   {
     image: "https://raw.githubusercontent.com/JASForm/branding/refs/heads/main/post3.webp",
     title: "Revolutionizing Healthcare: The Impact of Technology in the Medical World",
     author: "Sebastian Insausti",
     excerpt: "In the ever-evolving landscape of healthcare, technology has emerged as a powerful force, revolutionizing the way medical services are delivered, diagnoses are made, and patient care is managed. From cutting-edge medical devices and telemedicine solutions to advanced data analytics and...",
-    url: "https://joasegovia9427.github.io/jasform-web/blog/revolutionizing-healthcare-impact"
+    url: "#blog/revolutionizing-healthcare-impact"
   }
 ];
 
 const Blog: React.FC = () => {
-  const blogUrl = "https://joasegovia9427.github.io/jasform-web/blog/";
+  const blogArchiveUrl = "#blog-archive";
 
   return (
     <section id="blog" className="py-24 bg-white overflow-hidden">
@@ -74,9 +74,7 @@ const Blog: React.FC = () => {
             
             <div className="mt-10">
               <a 
-                href={blogUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={blogArchiveUrl}
                 className="inline-block bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/25 active:scale-95"
               >
                 Go to Blog!
@@ -93,15 +91,17 @@ const Blog: React.FC = () => {
             {blogPosts.map((post, idx) => (
               <div key={idx} className="flex flex-col bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition-shadow duration-300">
                 <div className="aspect-video w-full overflow-hidden">
-                  <img 
-                    src={post.image} 
-                    alt={post.title} 
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
+                  <a href={post.url}>
+                    <img 
+                      src={post.image} 
+                      alt={post.title} 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                  </a>
                 </div>
                 <div className="p-6 flex flex-grow flex-col">
-                  <h3 className="text-xl font-bold text-slate-900 mb-2 leading-tight">
-                    {post.title}
+                  <h3 className="text-xl font-bold text-slate-900 mb-2 leading-tight hover:text-blue-600 transition-colors">
+                    <a href={post.url}>{post.title}</a>
                   </h3>
                   <p className="text-sm text-blue-600 font-medium mb-4">by {post.author}</p>
                   <p className="text-slate-600 text-sm leading-relaxed flex-grow">
@@ -115,9 +115,7 @@ const Blog: React.FC = () => {
 
           <div className="flex justify-center">
             <a 
-              href={blogUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={blogArchiveUrl}
               className="inline-block bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/25 active:scale-95"
             >
               Go to Blog!
