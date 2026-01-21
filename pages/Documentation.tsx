@@ -14,7 +14,6 @@ const Documentation: React.FC = () => {
     { id: 'security', name: 'Security', icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z' },
     { id: 'faq', name: 'FAQ', icon: 'M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' },
     { id: 'glossary', name: 'Glossary', icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253' },
-    { id: 'contact-docs', name: 'Contact', icon: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' },
   ];
 
   const renderActiveContent = () => {
@@ -233,36 +232,205 @@ const Documentation: React.FC = () => {
       case 'users':
         return (
           <article className="max-w-none prose prose-slate">
-            <h1 className="text-4xl font-bold text-slate-900 mb-8">Profile Management</h1>
-            <p className="text-lg text-slate-600 mb-6">By accessing the “View Profile” option, you can view or modify the data of the currently logged-in user.</p>
+            <h1 className="text-4xl font-bold text-slate-900 mb-8">User Administration</h1>
+            <p className="text-lg text-slate-600 mb-6">
+              This section describes tasks related to system users. <strong>Administrator privileges</strong> are required to manage these users and access the options listed below.
+            </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
-              <div>
-                <h4 className="font-bold text-slate-800 mb-4 border-b pb-2">Personal Data</h4>
-                <ul className="space-y-2 text-slate-600 text-sm">
-                  <li><strong>First Name:</strong> Required.</li>
-                  <li><strong>Last Name:</strong> Required.</li>
-                  <li><strong>Email Address:</strong> Required.</li>
-                  <li><strong>Photo URL:</strong> Profile picture link.</li>
+            <div className="space-y-16">
+              <section>
+                <h3 className="text-2xl font-bold text-slate-800 mb-4">1. Listing System Users</h3>
+                <p>
+                  Go to the <strong>“System’s Users”</strong> section in the sidebar. The user directory provides full visibility into:
+                </p>
+                <ul className="list-disc pl-6 space-y-2 text-slate-600">
+                  <li>Full Name and Email Address.</li>
+                  <li>Organization and Role/Position.</li>
+                  <li>System Role (Creator vs Admin) and current status (Active/Inactive).</li>
                 </ul>
+                <p className="mt-4">
+                  Advanced filters allow you to search by name, email, or organization, and quickly isolate active admins or creator accounts.
+                </p>
+              </section>
+
+              <section>
+                <h3 className="text-2xl font-bold text-slate-800 mb-4">2. Creating a New User</h3>
+                <p>
+                  Click the <strong>“Create User”</strong> button to add a new member. You must provide the following details:
+                </p>
+                <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200 grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                  <ul className="space-y-3 text-slate-600 text-sm">
+                    <li>● <strong>First/Last Name:</strong> Required.</li>
+                    <li>● <strong>Email Address:</strong> Used for system login (Required).</li>
+                    <li>● <strong>Organization:</strong> Mandatory workplace association.</li>
+                    <li>● <strong>Position:</strong> User role within their org.</li>
+                  </ul>
+                  <ul className="space-y-3 text-slate-600 text-sm">
+                    <li>● <strong>Role:</strong> Select "Creator" (personal forms only) or "Admin" (full system access).</li>
+                    <li>● <strong>Active Status:</strong> Toggle system access.</li>
+                    <li>● <strong>Password:</strong> Initial security credential.</li>
+                    <li>● <strong>Photo URL:</strong> Profile image link.</li>
+                  </ul>
+                </div>
+              </section>
+
+              <section>
+                <h3 className="text-2xl font-bold text-slate-800 mb-4">3. Managing an Existing User</h3>
+                <p>
+                  In the user list, click the <strong>details icon ( <span className="inline-flex items-center justify-center w-5 h-5 bg-blue-100 text-blue-700 rounded-md font-bold text-xs mx-0.5 border border-blue-200">{">"}</span> )</strong> 
+                  next to a user to access their profile management view. 
+                </p>
+                <p className="mt-4">From this view, administrators can:</p>
+                <ul className="list-disc pl-6 space-y-2 text-slate-600">
+                  <li>Modify any field defined during user creation.</li>
+                  <li>Access and audit all forms created by this specific user.</li>
+                  <li><strong>Delete:</strong> Permanently remove the user account from the system.</li>
+                </ul>
+              </section>
+            </div>
+          </article>
+        );
+      case 'security':
+        return (
+          <article className="max-w-none prose prose-slate">
+            <h1 className="text-4xl font-bold text-slate-900 mb-8">System Security</h1>
+            <p className="text-lg text-slate-600 mb-10">
+              JASForm is built on a foundation of rigorous data protection and compliance. Security is integrated at every layer of our architecture.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+              <div className="p-8 rounded-3xl bg-blue-600 text-white shadow-xl">
+                <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-7.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                  HIPAA Compliance
+                </h3>
+                <p className="text-blue-50 opacity-90 leading-relaxed">
+                  JASForm adheres to strict HIPAA standards for the proper handling of Protected Health Information (PHI). Our processes ensure data privacy, availability, and integrity in every healthcare environment.
+                </p>
               </div>
-              <div>
-                <h4 className="font-bold text-slate-800 mb-4 border-b pb-2">Organizational Data</h4>
-                <ul className="space-y-2 text-slate-600 text-sm">
-                  <li><strong>Organization:</strong> Current workplace (Required).</li>
-                  <li><strong>Position:</strong> Your current role.</li>
-                  <li><strong>Change Password:</strong> Security management.</li>
-                </ul>
+              <div className="p-8 rounded-3xl bg-slate-800 text-white shadow-xl">
+                <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                  Secure Development
+                </h3>
+                <p className="text-slate-300 opacity-90 leading-relaxed">
+                  We utilize industry-leading defensive and secure programming best practices. Our engineers are trained in OWASP principles to prevent vulnerabilities before they reach production.
+                </p>
               </div>
             </div>
 
-            <div className="mt-8 bg-slate-50 p-6 rounded-xl">
-              <h4 className="font-bold text-slate-800 mb-4">Summary Statistics</h4>
-              <p className="text-slate-600 mb-4">The profile also displays your personal activity summary:</p>
-              <div className="flex flex-wrap gap-4">
-                <div className="bg-white px-4 py-2 rounded-lg border border-slate-200">Active Forms</div>
-                <div className="bg-white px-4 py-2 rounded-lg border border-slate-200">Inactive Forms</div>
-                <div className="bg-white px-4 py-2 rounded-lg border border-slate-200">Total Forms</div>
+            <div className="space-y-8">
+              <h3 className="text-2xl font-bold text-slate-800 border-b pb-2">Infrastructure & Network</h3>
+              <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200 space-y-6">
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center shrink-0">
+                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900">Encrypted Cloud Storage</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">Data is encrypted at rest and replicated across multiple availability zones to ensure fault tolerance and durability. Databases are strictly isolated from the public internet.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center shrink-0">
+                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900">Multi-Layer Threat Defense</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">We employ a combination of network firewalls, Web Application Firewalls (WAF), and forced HTTPS for all traffic. Continuous system monitoring detects anomalies in real-time.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        );
+      case 'faq':
+        return (
+          <article className="max-w-none prose prose-slate">
+            <h1 className="text-4xl font-bold text-slate-900 mb-8">Frequently Asked Questions</h1>
+            <div className="space-y-8">
+              <div>
+                <h4 className="font-bold text-slate-900 text-lg mb-2">What is JASForm and what is it used for?</h4>
+                <p className="text-slate-600 leading-relaxed">
+                  It is a software solution designed to allow the creation and management of customizable forms for various purposes, such as surveys, patient tracking, and generating statistics. It simplifies and centralizes data collection, especially in the healthcare and medical fields.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-bold text-slate-900 text-lg mb-2">How do I create a dynamic form?</h4>
+                <p className="text-slate-600 leading-relaxed">
+                  To create a form, log in to the system with valid credentials, go to the forms section, select the option to create a new form, and follow the instructions to add questions and configure the options according to your needs.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-bold text-slate-900 text-lg mb-2">How does the platform ensure interoperability with other systems?</h4>
+                <p className="text-slate-600 leading-relaxed">
+                  The platform has been designed based on secure and defensive programming practices, which guarantees compatibility and easy integration with external systems through API calls.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-bold text-slate-900 text-lg mb-2">What measures have been taken to comply with HIPAA regulations?</h4>
+                <p className="text-slate-600 leading-relaxed">
+                  Secure and defensive programming practices have been implemented, along with data encryption and access management to ensure the protection and privacy of health information, thus meeting HIPAA requirements.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-bold text-slate-900 text-lg mb-2">Can I use the platform for treatment tracking and patient management?</h4>
+                <p className="text-slate-600 leading-relaxed">
+                  Yes, the platform allows the creation of specific forms for treatment tracking and patient management, facilitating the management of clinical data and monitoring patient progress.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-bold text-slate-900 text-lg mb-2">Is it possible to view statistics on the platform?</h4>
+                <p className="text-slate-600 leading-relaxed">
+                  Yes, the platform includes a dashboard where you can view statistics on the total number of forms, total number of form instances, total number of form questions, and total number of users completing the form.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-bold text-slate-900 text-lg mb-2">How can I ensure my forms meet the specific needs of my organization?</h4>
+                <p className="text-slate-600 leading-relaxed">
+                  The platform offers extensive customization options for forms, such as question types, response options, and conditional logic, allowing you to adapt the forms to the specific needs of each organization.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-bold text-slate-900 text-lg mb-2">What technical support is available if I encounter problems with the platform?</h4>
+                <p className="text-slate-600 leading-relaxed">
+                  For any technical issues or inquiries, you can contact the JASForm team via email at <strong>hello@jasform.com</strong>, where assistance is available for any problems that may arise with the application.
+                </p>
+              </div>
+            </div>
+
+            <section className="mt-16 pt-8 border-t border-slate-100">
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Contact Information</h3>
+              <p className="text-slate-600">
+                To contact the JASForm team, please use the email address <strong>hello@jasform.com</strong>. We aim to respond to all inquiries within 24-48 business hours.
+              </p>
+            </section>
+          </article>
+        );
+      case 'glossary':
+        return (
+          <article className="max-w-none prose prose-slate">
+            <h1 className="text-4xl font-bold text-slate-900 mb-8">Glossary</h1>
+            <div className="space-y-6">
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                <dt className="font-bold text-blue-700 text-lg mb-1">API (Application Programming Interface)</dt>
+                <dd className="text-slate-600">A set of defined rules that allow different applications to communicate with each other.</dd>
+              </div>
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                <dt className="font-bold text-blue-700 text-lg mb-1">Public access code</dt>
+                <dd className="text-slate-600">Value used to generate a form link to share with the users who complete the form.</dd>
+              </div>
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                <dt className="font-bold text-blue-700 text-lg mb-1">Auxiliary Code</dt>
+                <dd className="text-slate-600">An optional code that can be entered by the user completing the form to associate their responses with an external platform configured in the form to receive the information.</dd>
+              </div>
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                <dt className="font-bold text-blue-700 text-lg mb-1">HIPAA</dt>
+                <dd className="text-slate-600">The Health Insurance Portability and Accountability Act of 1996 (HIPAA) is a federal law that required the creation of standards to protect confidential patient health information from being disclosed without the patient's consent or knowledge.</dd>
+              </div>
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                <dt className="font-bold text-blue-700 text-lg mb-1">PHI (Protected Health Information)</dt>
+                <dd className="text-slate-600">Individually identifiable health information transmitted electronically, maintained electronically, or transmitted or maintained in any other form or medium.</dd>
               </div>
             </div>
           </article>
@@ -365,7 +533,7 @@ const Documentation: React.FC = () => {
           </nav>
 
           {/* Article Container */}
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-100 min-h-[800px] p-8 md:p-16 relative">
+          <div className="bg-white rounded-2xl shadow-sm border border-slate-100 min-h-[800px] p-8 md:p-16 relative text-slate-600">
             <button className="absolute top-8 right-8 text-slate-400 hover:text-slate-600" title="Print article">
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
