@@ -24,7 +24,7 @@ const blogPosts = [
   }
 ];
 
-const BlogSection: React.FC = () => {
+const Blog: React.FC = () => {
   const blogUrl = "https://joasegovia9427.github.io/jasform-web/blog/";
 
   return (
@@ -129,4 +129,4 @@ const BlogSection: React.FC = () => {
   );
 };
 
-export default BlogSection;
+export default Blog;

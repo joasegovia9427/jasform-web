@@ -4,9 +4,10 @@ import Hero from './components/Hero';
 import HowItWorks from './components/HowItWorks';
 import Features from './components/Features';
 import TryIt from './components/TryIt';
-import BlogSection from './components/BlogSection';
-import TeamSection from './components/TeamSection';
+import Blog from './components/Blog';
+import Team from './components/Team';
 import Pricing from './components/Pricing';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
@@ -18,9 +19,10 @@ const App: React.FC = () => {
         <HowItWorks />
         <Features />
         <TryIt />
-        <BlogSection />
-        <TeamSection />
+        <Blog />
+        <Team />
         <Pricing />
+        <Contact />
       </main>
       <Footer />
     </div>

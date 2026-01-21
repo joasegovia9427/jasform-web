@@ -27,7 +27,7 @@ const teamMembers = [
   }
 ];
 
-const TeamSection: React.FC = () => {
+const Team: React.FC = () => {
   return (
     <section id="team" className="py-24 bg-gradient-to-b from-slate-100 to-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -83,4 +83,4 @@ const TeamSection: React.FC = () => {
   );
 };
 
-export default TeamSection;
+export default Team;
